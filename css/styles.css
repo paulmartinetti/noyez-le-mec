@@ -1,0 +1,71 @@
+
+/**/
+div {
+	border: 1px solid black;
+	padding: 2px
+}
+#lettera {
+	border: 1px solid black
+}
+/* main */
+#box1{
+	width: 640px;
+	height: 480px;
+}
+#upper{
+	width: 636px;
+	height: 304px;
+}
+#lower{
+	width: 636px;
+	height: 162px;
+	margin-top: 2px;
+}
+#guybox{
+	width: 140px;
+	float: left;
+}
+#keybox{
+	width:480px;
+	float: left;
+}
+#keyrow1{
+	padding-left: 10px;
+}
+#keyrow2{
+	padding-left: 20px;
+}
+/* key styles */
+button {
+	height: 40px;
+	width: 40px;
+	font-weight: bold;
+}
+.gray{
+	background-color: rgb(180, 180, 180);
+}
+.red{
+	background-color: red;
+}
+.green{
+	background-color: green;
+}
+/* choices 
+.btnCol{
+	color: #fff;
+	width: 25%;
+	float: left; 
+	text-align: center;
+	font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+	font-size: .9em;
+	padding: 10px 0 5px 0;
+	background-image: url(image.png);
+	background-color:lightblue;
+	background-position: center;
+	background-repeate: no-repeat;
+	background-size: contain;
+	background-size: cover; (repeats)
+ 	text-decoration: none;
+	display: block;
+}*/
+
