@@ -7,6 +7,17 @@ div {
 #lettera {
 	border: 1px solid black
 }
+/* starbox */
+#startbox {
+    background-color: aqua;
+    width: 300px;
+    height: 100px;
+    /*position: absolute;*/
+}
+#startbtn {
+    height: 40px;
+	width: 140px;
+}
 /* main */
 #box1{
 	width: 640px;
