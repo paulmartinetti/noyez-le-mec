@@ -8,14 +8,18 @@ window.onload = function () {
     var keyInitA;
     // string entered by user 1
     var guessStr;
-    // startbox
+    // get UI elements
     var startbox = document.getElementById('startbox');
+    startbox.setAttribute("class","scene1");
+    //var keybox = document.getElementById('keybox');
+    //console.log(keybox.childNodes[0]);
+    var myPhrase = document.getElementById('myPhrase');
 
     /**************************** setup ***********************/
     
     // capture initial string and hide field
     var getPhrase = function () {
-        guessStr = document.getElementById('myPhrase').value;
+        guessStr = myPhrase.value;
         console.log(guessStr);
         keyBoxSetup();
         
@@ -99,8 +103,8 @@ window.onload = function () {
         element.setAttribute("class", key.class);
         element.addEventListener("click", btnClick);
         //Append the element in page (in span).
-        var box = document.getElementById("keyrow" + key.row);
-        box.appendChild(element);
+        var keybox = document.getElementById("keyrow" + key.row);
+        keybox.appendChild(element);
     }
     //addKey("keyrow1",key);
 	/*myBox = document.getElementById("myContainer");

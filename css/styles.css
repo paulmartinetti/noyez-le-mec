@@ -1,20 +1,25 @@
 
 /**/
+h1, div {
+	font-family: "Lucida Console", Monaco, monospace;
+}
 div {
 	border: 1px solid black;
 	padding: 2px
 }
-#lettera {
-	border: 1px solid black
-}
 /* starbox */
-#startbox {
-    width: 200px;
+.scene1{
+	width: 300px;
+    height: 166px;
+	margin: auto;
+}
+#form {
+	width: 200px;
     height: 100px;
-    margin: auto;
+	margin: auto;
 }
 #startbtn {
-    height: 40px;
+    height: 30px;
 	width: 140px;
 }
 /* main */
