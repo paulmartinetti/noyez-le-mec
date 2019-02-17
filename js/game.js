@@ -12,6 +12,44 @@ window.onload = function () {
     var startbox = document.getElementById('startbox');
 
     /**************************** setup ***********************/
+    
+    // capture initial string and hide field
+    var getPhrase = function () {
+        guessStr = document.getElementById('myPhrase').value;
+        console.log(guessStr);
+        keyBoxSetup();
+        
+    }
+    // capture the word from user1
+    var startbtn = document.getElementById("startbtn");
+    startbtn.addEventListener('mousedown', getPhrase);
+
+    /***************************** update ***********************/
+    var btnClick = function (e) {
+        var btn = e.target;
+        btn.setAttribute("class", "red");
+        //btn.setAttribute("disabled", "");
+        btn.removeEventListener("click", btnClick);
+
+        //console.log(btn.id);
+    };
+    /***************************** new game ***********************/
+
+
+    // remove children from keyrow0-2 (does not remove eventlisteners)
+    var removeKeys = function () {
+        for (var i = 0; i < 3; i++) {
+            var box = document.getElementById("keyrow" + i);
+            while (box.firstChild) {
+                box.removeChild(box.firstChild);
+            }
+
+        }
+    };
+   
+    //removeKeys();
+    
+    /***************************** workers ***********************/
     // make key objects and array
     var keyBoxSetup = function () {
         var lettersA = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
@@ -38,49 +76,16 @@ window.onload = function () {
         }
         // store initial state
         keyInitA = keyA;
+        // ready to make keys
+        makeKeys();
     }
-
-    // capture initial string and hide field
-    var getPhrase = function () {
-        guessStr = document.getElementById('myPhrase').value;
-        startbox.style.display = "none";
-    }
-
-
-    /***************************** update ***********************/
-    var btnClick = function (e) {
-        var btn = e.target;
-        btn.setAttribute("class", "red");
-        //btn.setAttribute("disabled", "");
-        btn.removeEventListener("click", btnClick);
-
-        //console.log(btn.id);
-    };
-    /***************************** new game ***********************/
-    // capture the word from user1
-    var startbtn = document.getElementById("startbtn");
-    startbtn.addEventListener('mousedown', getPhrase);
-
-    // remove children from keyrow0-2 (does not remove eventlisteners)
-    var removeKeys = function () {
-        for (var i = 0; i < 3; i++) {
-            var box = document.getElementById("keyrow" + i);
-            while (box.firstChild) {
-                box.removeChild(box.firstChild);
-            }
-
-        }
-    };
-    // add keys
+    // add all keys
     var makeKeys = function () {
         for (var i = 0; i < keyInitA.length; i++) {
             addKey(keyInitA[i]);
         }
     }
-    //removeKeys();
-    keyBoxSetup();
-    makeKeys();
-    /***************************** workers ***********************/
+    // add one key
     function addKey(key) {
 
         //Create <button type="button" id="a" style="height:40px" disabled="">a</button>
@@ -97,7 +102,6 @@ window.onload = function () {
         var box = document.getElementById("keyrow" + key.row);
         box.appendChild(element);
     }
-
     //addKey("keyrow1",key);
 	/*myBox = document.getElementById("myContainer");
 	 
