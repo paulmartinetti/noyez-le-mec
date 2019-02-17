@@ -1,6 +1,6 @@
 
 /**/
-h1, div {
+h1, div, input {
 	font-family: "Lucida Console", Monaco, monospace;
 }
 div {
@@ -10,12 +10,14 @@ div {
 /* starbox */
 .scene1{
 	width: 300px;
-    height: 166px;
+    height: 150px;
+	text-align: center;
 	margin: auto;
 }
-#form {
-	width: 200px;
-    height: 100px;
+.scene2{
+	width: 600px;
+	height: 150px;
+	text-align: center;
 	margin: auto;
 }
 #startbtn {

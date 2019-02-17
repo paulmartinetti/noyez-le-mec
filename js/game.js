@@ -6,12 +6,11 @@ window.onload = function () {
     // Globals
     // stores initial key objs
     var keyInitA;
-    // string entered by user 1
-    var guessStr;
+    
     // get UI elements
     var startbox = document.getElementById('startbox');
     startbox.setAttribute("class","scene1");
-    //var keybox = document.getElementById('keybox');
+    var keybox = document.getElementById('keybox');
     //console.log(keybox.childNodes[0]);
     var myPhrase = document.getElementById('myPhrase');
 
@@ -19,8 +18,11 @@ window.onload = function () {
     
     // capture initial string and hide field
     var getPhrase = function () {
-        guessStr = myPhrase.value;
-        console.log(guessStr);
+        var guessStr = myPhrase.value;
+        myPhrase.value = blankStr(guessStr);
+        //console.log(guessStr);
+        startbox.setAttribute("class", "scene2");
+        startbox.childNodes[1].innerHTML = "";
         keyBoxSetup();
         
     }
@@ -67,13 +69,14 @@ window.onload = function () {
         };
         // array of key objects
         var keyA = [];
+        var rowInds = [1,3,5];
         // for each keyboard row 0, 1, or 2
         for (var i = 0; i < lettersA.length; i++) {
             // for each letter in the row
             for (var j = 0; j < lettersA[i].length; j++) {
                 var key = new Key();
                 key.id = lettersA[i].substr(j, 1);
-                key.row = i;
+                key.row = rowInds[i];
                 key.class = "gray";
                 keyA.push(key);
             }
@@ -102,34 +105,17 @@ window.onload = function () {
         element.setAttribute("id", key.id);
         element.setAttribute("class", key.class);
         element.addEventListener("click", btnClick);
-        //Append the element in page (in span).
-        var keybox = document.getElementById("keyrow" + key.row);
-        keybox.appendChild(element);
+        //Append the element in page
+        keybox.childNodes[key.row].appendChild(element);
     }
-    //addKey("keyrow1",key);
-	/*myBox = document.getElementById("myContainer");
-	 
-	 myH2 = myBox.getElementsByTagName("h3");
-	 //console.log(myH2[0].innerHTML);
-	 
-	 //console.log("element type: ", myBox.nodeType);
-	 //console.log("inner html: ", myBox.innerHTML);
-	 //console.log("child node: ", myBox.childNodes.length);
-	 
-	 myBox.onclick = function () {
-		myH2[0].style.color = "red";
-	 	myH2[1].style.color = "green";
-		
-		myH2[0].innerHTML += " +new red text here";
-		myBox.setAttribute("align", "right");
-		
-		// create the 
-		newElement = document.createElement("h3");
-		//myBox.appendChild(newElement);
-		myBox.insertBefore(newElement, myH2[1]);
-		
-		
-		
-	};*/
 
+    // create start string
+    var blankStr = function(s){
+        var len = s.length;
+        var blanks = "";
+        for (var i=0;i<len;i++){
+            blanks+="_ ";
+        }
+        return blanks;
+    }
 };
