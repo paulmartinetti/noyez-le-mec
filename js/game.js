@@ -9,12 +9,13 @@ window.onload = function () {
     
     // get UI elements
     var startbox = document.getElementById('startbox');
-    startbox.setAttribute("class","scene1");
+    
     var keybox = document.getElementById('keybox');
     //console.log(keybox.childNodes[0]);
     var myPhrase = document.getElementById('myPhrase');
 
     /**************************** setup ***********************/
+    startbox.setAttribute("class", "scene1");
     
     // capture initial string and hide field
     var getPhrase = function () {
